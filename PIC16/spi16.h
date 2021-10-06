@@ -16,10 +16,10 @@ Copyright 2003 Kimberly Otten Software Consulting
 
 // Define the SPI pins on the PIC
 
-#define SPI_SDI_PIN_TRIS	TRISC4
-#define SPI_SDO_PIN_TRIS	TRISC5
-#define SPI_CLOCK_PIN_TRIS	TRISC3
-#define SPI_SS_PIN_TRIS		TRISA5
+#define SPI_SDI_PIN_TRIS    TRISC4
+#define SPI_SDO_PIN_TRIS    TRISC5
+#define SPI_CLOCK_PIN_TRIS    TRISC3
+#define SPI_SS_PIN_TRIS        TRISA5
 
 
 // SSPSTAT Register Values
@@ -58,13 +58,13 @@ Copyright 2003 Kimberly Otten Software Consulting
 
 // Function Prototypes
 
-void			CloseSPI( void );
-unsigned char 	DataRdySPI( void );
-unsigned char 	ReadSPI( void );
-void 			OpenSPI( unsigned char sync_mode, unsigned char bus_mode, unsigned char smp_phase );
-unsigned char 	WriteSPI( unsigned char data_out );
-void 			getsSPI( unsigned char *rdptr, unsigned char length );
-void 			putsSPI( unsigned char *wrptr );
+void            CloseSPI( void );
+unsigned char     DataRdySPI( void );
+unsigned char     ReadSPI( void );
+void             OpenSPI( unsigned char sync_mode, unsigned char bus_mode, unsigned char smp_phase );
+unsigned char     WriteSPI( unsigned char data_out );
+void             getsSPI( unsigned char *rdptr, unsigned char length );
+void             putsSPI( unsigned char *wrptr );
 
 
 // Define alternate function names
@@ -77,21 +77,21 @@ void 			putsSPI( unsigned char *wrptr );
 // amount of ROM will be required, so these should be used only if more stack space
 // is absolutely required.
 
-#define READSPI( Val )						\
-					{						\
-						SSPBUF = 0x00;		\
-					    while ( !STAT_BF ); \
-					    Val = SSPBUF;    \
-					}
+#define READSPI( Val )                        \
+                    {                        \
+                        SSPBUF = 0x00;        \
+                        while ( !STAT_BF ); \
+                        Val = SSPBUF;    \
+                    }
 
 // Since we're doing things inline, we have to remove the error checking.
 
-#define WRITESPI( Val )							\
-					{							\
-					    SSPBUF = Val;    		\
-					    if ( !WCOL )         	\
-					        while( !STAT_BF );	\
-					}
+#define WRITESPI( Val )                            \
+                    {                            \
+                        SSPBUF = Val;            \
+                        if ( !WCOL )             \
+                            while( !STAT_BF );    \
+                    }
 
 
 #endif  /* __SPI16_H */

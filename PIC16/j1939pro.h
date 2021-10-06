@@ -25,23 +25,23 @@ Copyright 2003 Kimberly Otten Software Consulting
 
 // Give visibility to the global variables.
 
-extern J1939_FLAG    						J1939_Flags;
-extern J1939_RX_QUEUE_BANK unsigned char	RXQueueCount;
+extern J1939_FLAG                            J1939_Flags;
+extern J1939_RX_QUEUE_BANK unsigned char    RXQueueCount;
 
 
 // Library function prototypes
 
-void 			J1939_AddressClaimHandling( unsigned char Mode );
+void             J1939_AddressClaimHandling( unsigned char Mode );
 #ifdef J1939_ACCEPT_CMDADD
-void			J1939_CommandedAddressHandling( void );
+void            J1939_CommandedAddressHandling( void );
 #endif
-unsigned char	J1939_DequeueMessage( J1939_USER_MSG_BANK J1939_MESSAGE *MsgPtr );
-unsigned char  	J1939_EnqueueMessage( J1939_USER_MSG_BANK J1939_MESSAGE *MsgPtr );
-void 			J1939_Initialization( void );
-void			J1939_ISR( void );
-void 			J1939_Poll( unsigned char ElapsedTime );
-void 			J1939_ReceiveMessages( void );
-void 			J1939_RequestForAddressClaimHandling( void );
-unsigned char 	J1939_TransmitMessages( void );
+unsigned char    J1939_DequeueMessage( J1939_USER_MSG_BANK J1939_MESSAGE *MsgPtr );
+unsigned char      J1939_EnqueueMessage( J1939_USER_MSG_BANK J1939_MESSAGE *MsgPtr );
+void             J1939_Initialization( void );
+void            J1939_ISR( void );
+void             J1939_Poll( unsigned char ElapsedTime );
+void             J1939_ReceiveMessages( void );
+void             J1939_RequestForAddressClaimHandling( void );
+unsigned char     J1939_TransmitMessages( void );
 
 #endif

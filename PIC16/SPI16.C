@@ -14,12 +14,12 @@ included for making the ReadSPI and WriteSPI functions in-line.  Also,
 an interrupt level definition is included for the WriteSPI function.
 
 This file requires the following header files:
-	pic.h (HI-TECH)
-	j1939cfg.h
-	j1939pro.h
-	j1939_16.h
-	mcp2515.h
-	spi16.h
+    pic.h (HI-TECH)
+    j1939cfg.h
+    j1939pro.h
+    j1939_16.h
+    mcp2515.h
+    spi16.h
 
 Version     Date        Description
 ----------------------------------------------------------------------

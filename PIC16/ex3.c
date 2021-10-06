@@ -17,6 +17,18 @@ J1939_POLL_MCP should be commented out
 
 J1939_USER_MSG_BANK J1939_MESSAGE Msg;
 
+#define SECOND_ADDRESS 132
+#define TURN_ON_LED 92
+#define TURN_OFF_LED 94
+#define NODE_NAME0 51
+#define NODE_NAME1 0
+#define NODE_NAME2 0
+#define NODE_NAME3 0
+#define NODE_NAME4 0
+#define NODE_NAME5 0
+#define NODE_NAME6 0
+#define NODE_NAME7 0
+
 #pragma interrupt_level 0
 void interrupt isr( void )
 {
